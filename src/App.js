@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-import {v4 as idGenarator} from "uuid";
+import {v4 as idGenerator} from "uuid";
 
 import TodoList from "./components/TodoList";
 import {useLocalStorage} from "./hooks/useLocalStorage";
@@ -16,8 +16,10 @@ function App() {
     }
 
     function handleNewTodo() {
-        setValues([...values, { id: idGenarator(), task: todo, completed: false }]);
-        setTodo("")
+        if (todo !== "") {
+            setValues([...values, {id: idGenerator(), task: todo, completed: false}]);
+            setTodo("")
+        }
     }
 
     return (
@@ -28,6 +30,7 @@ function App() {
                 className="search__input"
                 value={todo}
                 onChange={handleOnChange}
+                onKeyUp={e => e.key === 'Enter' && handleNewTodo(e)}
             />
             <button
                 className="search__button"
