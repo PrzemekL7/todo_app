@@ -1,5 +1,7 @@
 import {useState} from "react";
 
+import {v4 as idGenarator} from "uuid";
+
 import TodoList from "./components/TodoList";
 import {useLocalStorage} from "./hooks/useLocalStorage";
 
@@ -14,12 +16,12 @@ function App() {
     }
 
     function handleNewTodo() {
-        setValues([...values, todo]);
+        setValues([...values, { id: idGenarator(), task: todo, completed: false }]);
         setTodo("")
     }
 
     return (
-        <div className="search">
+        <div className="App">
             <input
                 type="text"
                 placeholder="Add todo"
@@ -36,6 +38,7 @@ function App() {
             <TodoList
                 todoList={values}
             />
+            <button>Clear completed</button>
         </div>
     );
 }

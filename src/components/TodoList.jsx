@@ -1,10 +1,12 @@
+import TodoListTask from "./TodoListTask";
+
 function TodoList({todoList}) {
     return (
-        <>
-            {todoList.map(todo => (
-                <div>{todo}</div>
-            ))}
-        </>
+        <ul className="task-list">
+            {todoList.length > 0 ? todoList.map(todo => (
+                <TodoListTask key={todo.id} todoTask={todo}/>
+            )) : <div>no tasks</div>}
+        </ul>
     );
 }
 
