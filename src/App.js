@@ -17,7 +17,7 @@ function App() {
 
     function handleNewTodo() {
         if (todo !== "") {
-            setValues([...values, {id: idGenerator(), task: todo, completed: false}]);
+            setValues([...values, {id: idGenerator(), task: todo, completed: false, edit: false}]);
             setTodo("")
         }
     }
@@ -32,7 +32,7 @@ function App() {
             <input
                 type="text"
                 placeholder="Add todo"
-                className="search__input"
+                className="search__input input"
                 value={todo}
                 onChange={handleOnChange}
                 onKeyUp={e => e.key === 'Enter' && handleNewTodo(e)}
