@@ -1,7 +1,9 @@
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 function TodoListTask({todoTask: {task, id, edit}, setValues, todoList}) {
-    const [todoValue, setTodoValue] = useState(() => task.toString())
+    const [todoValue, setTodoValue] = useState(() => task.toString());
+    const [focus, setFocus] = useState(false);
+    const inputElement = useRef();
 
     function handleOnComplete() {
         const newTodos = [...todoList]
@@ -17,6 +19,7 @@ function TodoListTask({todoTask: {task, id, edit}, setValues, todoList}) {
         const newTodos = [...todoList]
         newTodos.map(todo => todo.id === id ? todo.edit = true : todo)
         setValues([...newTodos])
+        setFocus(prevState => !prevState)
     }
 
     function handleEditedTodo() {
@@ -26,6 +29,10 @@ function TodoListTask({todoTask: {task, id, edit}, setValues, todoList}) {
             setValues([...newTodos])
         }
     }
+
+    useEffect(() => {
+        inputElement.current.focus();
+    }, [focus])
 
     return (
         <>
@@ -62,6 +69,7 @@ function TodoListTask({todoTask: {task, id, edit}, setValues, todoList}) {
                             value={todoValue}
                             onChange={handleOnChange}
                             onKeyUp={e => e.key === 'Enter' && handleEditedTodo(e)}
+                            ref={inputElement}
                         />
                         <button
                             className="search__button"
