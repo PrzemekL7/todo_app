@@ -22,6 +22,11 @@ function App() {
         }
     }
 
+    function handleOnClear() {
+        const newTodos = values.filter(todo => todo.completed === false)
+        setValues([...newTodos])
+    }
+
     return (
         <div className="App">
             <input
@@ -39,9 +44,13 @@ function App() {
                 Do!
             </button>
             <TodoList
-                todoList={values}
+                todoList={values} setValues={setValues}
             />
-            <button>Clear completed</button>
+            <button
+                onClick={handleOnClear}
+            >
+                Clear completed ❌
+            </button>
         </div>
     );
 }
