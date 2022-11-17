@@ -5,6 +5,10 @@ function TodoListTask({todoTask: {task, id, edit}, setValues, todoList}) {
     const [focus, setFocus] = useState(false);
     const inputElement = useRef();
 
+    useEffect(() => {
+        handleOnFocus();
+    }, [focus])
+
     function handleOnComplete() {
         const newTodos = [...todoList]
         newTodos.map(todo => todo.id === id ? todo.completed = !todo.completed : todo)
@@ -29,10 +33,11 @@ function TodoListTask({todoTask: {task, id, edit}, setValues, todoList}) {
             setValues([...newTodos])
         }
     }
-
-    useEffect(() => {
-        inputElement.current.focus();
-    }, [focus])
+    function handleOnFocus() {
+        if (focus === true) {
+            inputElement.current.focus()
+        }
+    }
 
     return (
         <>

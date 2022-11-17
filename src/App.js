@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 import {v4 as idGenerator} from "uuid";
 
@@ -9,7 +9,12 @@ import './App.css';
 
 function App() {
     const [todo, setTodo] = useState("");
-    const [values, setValues] = useLocalStorage("todo", [])
+    const [values, setValues] = useLocalStorage("todo", []);
+    const inputElement = useRef();
+
+    useEffect(() => {
+        inputElement.current.focus();
+    }, [])
 
     function handleOnChange(e) {
         setTodo(e.target.value)
@@ -36,6 +41,7 @@ function App() {
                 value={todo}
                 onChange={handleOnChange}
                 onKeyUp={e => e.key === 'Enter' && handleNewTodo(e)}
+                ref={inputElement}
             />
             <button
                 className="search__button"
