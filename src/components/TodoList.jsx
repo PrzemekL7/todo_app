@@ -5,18 +5,20 @@ function TodoList({todoList, setValues}) {
         <ul
             className="task-list"
         >
-            {todoList.length > 0
-                ?
-                todoList.map(todo => (
-                    <TodoListTask
-                        key={todo.id}
-                        todoTask={todo}
-                        setValues={setValues}
-                        todoList={todoList}
-                    />
-                ))
-                :
-                null}
+            {
+                todoList.length > 0
+                    ?
+                    todoList.map(todo => (
+                        <TodoListTask
+                            key={todo.id}
+                            todoTask={todo}
+                            setValues={setValues}
+                            todoList={todoList}
+                        />
+                    ))
+                    :
+                    null
+            }
 
         </ul>
     );

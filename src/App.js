@@ -3,7 +3,12 @@ import TodoInput from "./components/TodoInput";
 
 function App() {
     return (
-        <div className="App">
+        <div className="container">
+            <h1
+                className="header container__header"
+            >
+                TODOS
+            </h1>
             <TodoInput/>
         </div>
     );
