@@ -33,6 +33,7 @@ function TodoListTask({todoTask: {task, id, edit}, setValues, todoList}) {
             setValues([...newTodos])
         }
     }
+
     function handleOnFocus() {
         if (focus === true) {
             inputElement.current.focus()
@@ -41,7 +42,9 @@ function TodoListTask({todoTask: {task, id, edit}, setValues, todoList}) {
 
     return (
         <>
-            {edit === false ?
+            {
+                edit === false
+                ?
                 (
                     <div className="list-item">
                         <li
