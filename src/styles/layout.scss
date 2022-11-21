@@ -1,0 +1,17 @@
+@import './utils';
+
+.App {
+  width: 100%;
+  max-width: rem(1200px);
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+
+
+  @media only screen and (max-width: rem(1280px)){
+    padding-left: rem(32px);
+    padding-right: rem(32px);
+  }
+}
+
+
+

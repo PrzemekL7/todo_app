@@ -1,16 +1,17 @@
-import './App.css';
 import TodoInput from "./components/TodoInput";
+
+import './styles/main.scss';
 
 function App() {
     return (
-        <div className="container">
+        <main className="App">
             <h1
-                className="header container__header"
+                className=" header"
             >
                 TODOS
             </h1>
             <TodoInput/>
-        </div>
+        </main>
     );
 }
 

@@ -2,7 +2,7 @@ import TodoListTask from "./TodoListTask";
 
 function TodoList({todoList, setValues}) {
     return (
-        <ul
+        <div
             className="task-list"
         >
             {
@@ -20,7 +20,7 @@ function TodoList({todoList, setValues}) {
                     null
             }
 
-        </ul>
+        </div>
     );
 }
 

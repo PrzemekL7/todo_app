@@ -30,31 +30,31 @@ function TodoInput() {
 
     return (
         <div
-            className="search">
-            <input
-                type="text"
-                placeholder="Add todo"
-                className="search__input input"
-                value={todo}
-                onChange={handleOnChange}
-                onKeyUp={e => e.key === 'Enter' && handleNewTodo(e)}
-                ref={inputElement}
-            />
-            <button
-                className="search__button button"
-                onClick={handleNewTodo}
+            className="input-container">
+            <div
+                className="input-container__wrapper"
             >
-                Do!
-            </button>
-            <TodoList
-                todoList={values}
-                setValues={setValues}
-            />
+                <input
+                    type="text"
+                    placeholder="Add todo"
+                    className="input-container__input input"
+                    value={todo}
+                    onChange={handleOnChange}
+                    onKeyUp={e => e.key === 'Enter' && handleNewTodo(e)}
+                    ref={inputElement}
+                />
+                <button
+                    className="input-container__btn btn"
+                    onClick={handleNewTodo}
+                >
+                    Do!
+                </button>
+            </div>
             {
                 values.length > 0
                     ?
                     <button
-                        className="search__button button"
+                        className="input-container__btn btn sticky"
                         onClick={handleOnClear}
                     >
                         Clear completed ❌
@@ -62,6 +62,10 @@ function TodoInput() {
                     :
                     null
             }
+            <TodoList
+                todoList={values}
+                setValues={setValues}
+            />
 
         </div>
     );

@@ -1,0 +1,104 @@
+@import './utils';
+
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: rgb(72, 130, 134);
+  display: flex;
+  justify-content: center;
+  padding-top: rem(50px);
+  margin: 0;
+}
+
+.sticky {
+  position: sticky;
+  top: 3.5rem;
+  z-index: 100;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: rem(11px);
+
+  &__wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+  }
+
+  &__input {
+    padding: rem(9px);
+    border-radius: rem(4px);
+    border: rem(1px) solid rgb(114, 114, 114);
+    background-color: rgb(183, 213, 212);
+    margin: rem(10px) rem(10px) rem(10px) 0;
+    color: rgba(0, 0, 0, 0.9);
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    outline: rem(2px) rgb(114, 114, 114);
+  }
+
+  &__btn {
+    padding: rem(9px);
+    border-radius: rem(4px);
+    border: rem(1px) rgb(48, 82, 82);
+    background-color: rgb(255, 255, 255);
+    color: 	rgba(55, 62, 64, 0.9);
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(48, 82, 82);
+      color: rgb(255, 255, 255);
+      transition: all 600ms;
+    }
+  }
+
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 50%;
+  flex-wrap: wrap;
+
+}
+
+.list-item {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  color: rgb(55, 62, 64);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: rem(11px);
+  list-style: none;
+  max-width: 100%;
+  flex-wrap: wrap;
+
+  &__h2 {
+    word-wrap: break-word;
+    max-width: 100%;
+
+    &--completed {
+      text-decoration: line-through rgb(55, 62, 64);
+      transition: all 600ms;
+    }
+  }
+
+  &__btn {
+    border-radius: rem(4px);
+    border: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
+
+}

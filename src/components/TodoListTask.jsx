@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 
-function TodoListTask({todoTask: {task, id, edit}, setValues, todoList}) {
+function TodoListTask({todoTask: {task, id, edit, completed}, setValues, todoList}) {
     const [todoValue, setTodoValue] = useState(() => task.toString());
     const [focus, setFocus] = useState(false);
     const inputElement = useRef();
@@ -47,21 +47,21 @@ function TodoListTask({todoTask: {task, id, edit}, setValues, todoList}) {
                 ?
                 (
                     <div className="list-item">
-                        <li
-                            className="list-item__element"
+                        <h3
+                            className={!completed ? "list-item__h2" : "list-item__h2--completed"}
                         >
                             {task}
-                        </li>
+                        </h3>
                         <button
                             title="edit"
-                            className="list-item__edit-button"
+                            className="list-item__btn btn"
                             onClick={handleEditToggle}
                         >
                             📑
                         </button>
                         <button
                             title="complete"
-                            className="list-item__completed-button"
+                            className="list-item__btn btn"
                             onClick={handleOnComplete}
                         >
                             ✔
@@ -70,17 +70,17 @@ function TodoListTask({todoTask: {task, id, edit}, setValues, todoList}) {
                 )
                 :
                 (
-                    <div className="list-item">
+                    <div className="list-item input-container">
                         <input
                             type="text"
-                            className="list-item__input input"
+                            className="input-container__input list-item__input input"
                             value={todoValue}
                             onChange={handleOnChange}
                             onKeyUp={e => e.key === 'Enter' && handleEditedTodo(e)}
                             ref={inputElement}
                         />
                         <button
-                            className="search__button"
+                            className="list-item__button button"
                             onClick={handleEditedTodo}
                         >
                             Confirm
