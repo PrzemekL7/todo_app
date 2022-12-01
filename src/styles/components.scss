@@ -12,7 +12,6 @@
   display: flex;
   justify-content: center;
   padding-top: rem(50px);
-  margin: 0;
 }
 
 .sticky {
@@ -32,6 +31,8 @@
     top: 0;
     z-index: 100;
     background: white;
+    margin: 0;
+    border-top: 0.0625rem solid rgb(72, 130, 134);
   }
 
   &__input {
@@ -54,6 +55,7 @@
     color: 	rgba(55, 62, 64, 0.9);
     cursor: pointer;
     font-weight: 600;
+    font-family: "Roboto", sans-serif;
 
 
     &:hover {
@@ -86,7 +88,7 @@
   max-width: 100%;
   flex-wrap: wrap;
 
-  &__h2 {
+  &__h3 {
     word-wrap: break-word;
     max-width: 100%;
 

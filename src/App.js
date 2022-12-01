@@ -6,7 +6,7 @@ function App() {
     return (
         <main className="App">
             <h1
-                className=" header"
+                className="header"
             >
                 TODOS
             </h1>
