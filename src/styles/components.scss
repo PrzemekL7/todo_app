@@ -46,25 +46,24 @@
     font-weight: 300;
     outline: rem(2px) rgb(114, 114, 114);
   }
+}
 
-  &__btn {
-    padding: rem(9px);
-    border-radius: rem(4px);
-    border: rem(1px) rgb(48, 82, 82);
-    background-color: rgb(255, 255, 255);
-    color: 	rgba(55, 62, 64, 0.9);
-    cursor: pointer;
-    font-weight: 600;
-    font-family: "Roboto", sans-serif;
+.btn {
+  padding: rem(9px);
+  border-radius: rem(4px);
+  border: rem(1px) rgb(48, 82, 82);
+  background-color: rgb(255, 255, 255);
+  color: rgba(55, 62, 64, 0.9);
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
 
 
-    &:hover {
-      background-color: rgb(48, 82, 82);
-      color: rgb(255, 255, 255);
-      transition: all 600ms;
-    }
+  &:hover {
+    background-color: rgb(48, 82, 82);
+    color: rgb(255, 255, 255);
+    transition: all 600ms;
   }
-
 }
 
 .task-list {
@@ -122,21 +121,5 @@
     font-weight: 300;
     border: none;
     text-align: center;
-  }
-
-  &__button {
-    padding: rem(9px);
-    border-radius: rem(4px);
-    border: rem(1px) rgb(48, 82, 82);
-    background-color: rgb(255, 255, 255);
-    color: 	rgba(55, 62, 64, 0.9);
-    cursor: pointer;
-    font-weight: 600;
-
-    &:hover {
-      background-color: rgb(48, 82, 82);
-      color: rgb(255, 255, 255);
-      transition: all 600ms;
-    }
   }
 }

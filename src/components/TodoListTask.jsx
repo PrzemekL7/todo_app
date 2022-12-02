@@ -54,14 +54,14 @@ function TodoListTask({todoTask: {task, id, edit, completed}, setValues, todoLis
                         </h3>
                         <button
                             title="edit"
-                            className="list-item__btn btn"
+                            className="list-item__btn"
                             onClick={handleEditToggle}
                         >
                             📑
                         </button>
                         <button
                             title="complete"
-                            className="list-item__btn btn"
+                            className="list-item__btn"
                             onClick={handleOnComplete}
                         >
                             ✔
@@ -80,7 +80,7 @@ function TodoListTask({todoTask: {task, id, edit, completed}, setValues, todoLis
                             ref={inputElement}
                         />
                         <button
-                            className="list-item__button btn"
+                            className="btn"
                             onClick={handleEditedTodo}
                         >
                             Confirm
