@@ -73,14 +73,14 @@ function TodoListTask({todoTask: {task, id, edit, completed}, setValues, todoLis
                     <div className="list-item">
                         <input
                             type="text"
-                            className="input-container__input list-item__input input-container"
+                            className="input-container__input list-item__input"
                             value={todoValue}
                             onChange={handleOnChange}
                             onKeyUp={e => e.key === 'Enter' && handleEditedTodo(e)}
                             ref={inputElement}
                         />
                         <button
-                            className="list-item__button button"
+                            className="list-item__button btn"
                             onClick={handleEditedTodo}
                         >
                             Confirm
